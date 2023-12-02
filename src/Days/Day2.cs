@@ -1,4 +1,6 @@
 
+using System.Diagnostics;
+
 namespace AdventOfCode2024.Days;
 public class Day2 : AbstractDay
 {
@@ -10,6 +12,9 @@ public class Day2 : AbstractDay
     {
         var input = GetInput();
         //Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
+        
+        var stopwatch = new Stopwatch();
+        stopwatch.Start();
 
         var deel1 = 0;
         var deel2 = 0;
@@ -62,9 +67,12 @@ public class Day2 : AbstractDay
 
             deel2 += redMaxValue * greenMaxValue * blueMaxValue;
         }
+        stopwatch.Stop();
 
         Result(deel1);
         Result(deel2);
+        Console.WriteLine($"Execution Time: {stopwatch.ElapsedTicks} ticks");
+
     }
 
     private int ReadNumber(string text, ref int cursor)
