@@ -1,5 +1,5 @@
 ﻿using AdventOfCode2024.Days;
 
-var day = new Day4();
+var day = new Day01();
 
 day.Execute();
